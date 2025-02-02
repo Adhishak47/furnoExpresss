@@ -9,7 +9,7 @@ import logo from '../public/logo.svg'
 const NavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
   <Link
     href={href}
-    className="text-wood-dark hover:text-wood-medium transition-colors duration-300 block py-2 px-4 text-sm"
+    className="text-wood-dark hover:text-wood-medium transition-colors duration-300 block py-2 px-4 text-base"
     onClick={onClick}
   >
     {children}
@@ -24,7 +24,7 @@ export function Navbar() {
 
   return (
     <nav className="bg-cream shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
@@ -34,11 +34,13 @@ export function Navbar() {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-              {/* <NavLink href="/offerings">Offerings</NavLink> */}
-              <NavLink href="/customize">Customize</NavLink>
+            <NavLink href="/offerings">Home</NavLink>
+              <NavLink href="/offerings">Offerings</NavLink>
+              <NavLink href="/customize">Partner With Us</NavLink>
               <NavLink href="/contact">Contact Us</NavLink>
               <NavLink href="/#about">About Us</NavLink>
-              <button className="bg-wood-medium hover:bg-wood-dark text-cream font-bold py-2 px-4 rounded transition-colors duration-300 text-sm">
+              <NavLink href="/offerings">FAQs</NavLink>
+              <button className="bg-amber-900 hover:bg-amber-950 text-white font-bold py-2 px-4 rounded transition-colors duration-300 text-base">
                 Sign In
               </button>
             </div>
