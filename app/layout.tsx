@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-// import {FollowingPointerCard ,TitleComponent} from "../components/ui/following-pointer";
+// import {FollowerPointerCard } from "../components/ui/following-pointer";
 import { Navbar } from "../components/Navbar";
 import Categories from "../components/Categories";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
@@ -35,15 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} antialiased font-poppins text-amber-800 bg-stone-200 `}
+        className={`${poppins.variable} antialiased font-poppins text-amber-800 bg-white `}
       >
        
-
+        {/* <FollowerPointerCard> */}
         <Navbar/>
         {children}
         <Categories/>
         <AnimatedTestimonials/>
         <Footer/>
+        {/* </FollowerPointerCard> */}
 
       
       </body>

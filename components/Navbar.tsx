@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react"
 import type React from "react" 
 import Image from "next/image" 
 import logo from '../public/logo.svg'
+import { Button } from "./ui/moving-border"
 const NavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
   <Link
     href={href}
@@ -34,10 +35,11 @@ export function Navbar() {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-            <NavLink href="/offerings">Home</NavLink>
-              <NavLink href="/offerings">Offerings</NavLink>
-              <NavLink href="/customize">Partner With Us</NavLink>
+              {/* <NavLink href="/offerings">Offerings</NavLink> */}
+              <NavLink href="/customize">Customize</NavLink>
               <NavLink href="/contact">Contact Us</NavLink>
+             
+
               <NavLink href="/#about">About Us</NavLink>
               <NavLink href="/offerings">FAQs</NavLink>
               <button className="bg-amber-900 hover:bg-amber-950 text-white font-bold py-2 px-4 rounded transition-colors duration-300 text-base">
