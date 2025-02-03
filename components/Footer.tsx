@@ -72,22 +72,22 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="hover:text-wood-light transition-colors duration-300">
+                <Link href="/about" className="hover:text-wood-light hover:underline transition-colors duration-300">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-wood-light transition-colors duration-300">
+                <Link href="/products" className="hover:text-wood-light hover:underline transition-colors duration-300">
                   Our Products
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-wood-light transition-colors duration-300">
+                <Link href="/blog" className="hover:text-wood-light hover:underline transition-colors duration-300">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-wood-light">
+                <Link href="/contact" className="hover:text-wood-light hover:underline">
                   Contact Us
                 </Link>
               </li>
@@ -99,22 +99,22 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4">Customer Service</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/faq" className="hover:text-wood-light transition-colors duration-300">
+                <Link href="/faq" className="hover:text-wood-light hover:underline transition-colors duration-300">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/shipping" className="hover:text-wood-light transition-colors duration-300">
+                <Link href="/shipping" className="hover:text-wood-light hover:underline transition-colors duration-300">
                   Shipping & Returns
                 </Link>
               </li>
               <li>
-                <Link href="/warranty" className="hover:text-wood-light transition-colors duration-300">
+                <Link href="/warranty" className="hover:text-wood-light hover:underline transition-colors duration-300">
                   Warranty
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-wood-light transition-colors duration-300">
+                <Link href="/privacy" className="hover:text-wood-light hover:underline transition-colors duration-300">
                   Privacy Policy
                 </Link>
               </li>
