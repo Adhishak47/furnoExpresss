@@ -1,6 +1,22 @@
 "use client";
-"use client";
 
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import logo from "../public/logo.svg";
+import { Button } from "./ui/moving-border";
+import SignupModal from "./SignupModal";
+
+const NavLink = ({
+  href,
+  children,
+  onClick,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}) => (
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -21,16 +37,23 @@ const NavLink = ({
   <Link
     href={href}
     className="text-wood-dark hover:text-wood-medium hover:underline transition-all duration-300 block py-2 px-4 text-base"
+    className="text-wood-dark hover:text-wood-medium hover:underline transition-all duration-300 block py-2 px-4 text-base"
     onClick={onClick}
   >
     {children}
   </Link>
 );
+);
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+  const toggleSignup = () => setIsSignupOpen(!isSignupOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
   const toggleSignup = () => setIsSignupOpen(!isSignupOpen);
@@ -38,9 +61,13 @@ export function Navbar() {
   return (
     <nav className="bg-cream shadow-md ">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 ">
+    <nav className="bg-cream shadow-md ">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
+              <Image src={logo} alt="logo" width={40} />
+              <span className="text-2xl px-2 font-bold text-wood-dark">FurnoExpress</span>
               <Image src={logo} alt="logo" width={40} />
               <span className="text-2xl px-2 font-bold text-wood-dark">FurnoExpress</span>
             </Link>
@@ -50,7 +77,12 @@ export function Navbar() {
               <NavLink href="/#home">Home</NavLink>
               <NavLink href="/#offerings">Offerings</NavLink>
               <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="/#home">Home</NavLink>
+              <NavLink href="/#offerings">Offerings</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
               <NavLink href="/#about">About Us</NavLink>
+              <NavLink href="/#faqs">FAQs</NavLink>
+              <button className="bg-amber-900 hover:bg-amber-950 text-white font-bold py-2 px-4 rounded transition-colors duration-300 text-sm">
               <NavLink href="/#faqs">FAQs</NavLink>
               <button className="bg-amber-900 hover:bg-amber-950 text-white font-bold py-2 px-4 rounded transition-colors duration-300 text-sm">
                 Sign In
@@ -75,6 +107,7 @@ export function Navbar() {
       </div>
 
       {/* Mobile menu */}
+      {/* Mobile menu */}
       <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <NavLink href="/offerings" onClick={closeMenu}>
@@ -93,6 +126,10 @@ export function Navbar() {
             onClick={toggleSignup}
             className="w-full text-left bg-wood-medium hover:bg-wood-dark text-cream font-bold py-2 px-4 rounded transition-colors duration-300 mt-2 text-sm"
           >
+          <button
+            onClick={toggleSignup}
+            className="w-full text-left bg-wood-medium hover:bg-wood-dark text-cream font-bold py-2 px-4 rounded transition-colors duration-300 mt-2 text-sm"
+          >
             Sign In
           </button>
         </div>
@@ -100,6 +137,10 @@ export function Navbar() {
 
       {/* Sign-Up Modal */}
       <SignupModal isOpen={isSignupOpen} onClose={toggleSignup} />
+
+      {/* Sign-Up Modal */}
+      <SignupModal isOpen={isSignupOpen} onClose={toggleSignup} />
     </nav>
+  );
   );
 }
