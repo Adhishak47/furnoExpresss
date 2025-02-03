@@ -87,7 +87,8 @@ export function Navbar() {
           <NavLink href="/contact" onClick={closeMenu}>
             Contact Us
           </NavLink>
-          <NavLink href="/about" onClick={closeMenu}>
+          <NavLink href="/about" 
+          onClick={closeMenu}>
             About Us
           </NavLink>
           <button
